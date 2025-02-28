@@ -1,0 +1,5 @@
+site_name: 我的脚本中心
+nav:
+  - 首页: index.md
+  - 脚本说明: scripts.md
+theme: readthedocs
