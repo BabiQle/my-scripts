@@ -1,7 +1,7 @@
 name: Deploy Docs
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]  # 必须与你的实际分支名一致
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -10,9 +10,9 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.x"
-      - run: pip install mkdocs
-      - run: mkdocs build --site-dir public
+      - run: pip install mkdocs  # 安装文档生成工具
+      - run: mkdocs build --site-dir public  # 构建到public目录
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public  # 发布目录
